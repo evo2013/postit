@@ -12,7 +12,11 @@ PostitTemplate::Application.routes.draw do
       post 'vote' #/posts/3/vote
     end
 
-    resources :comments
+    resources :comments, only: [:create] do
+      member do #posts/comments/3/vote
+        post 'vote'
+      end 
+    end
   end
   resources :categories, only: [:new, :create, :show]
   resources :users, only: [:show, :create, :edit, :update ]
@@ -23,4 +27,4 @@ end
 
 # POST /posts/3/vote => posts#vote
 # POST /posts/comments/3/vote => comments#vote
-# ~no adtnl params info
+# ~no adtnl params info needed

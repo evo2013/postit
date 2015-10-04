@@ -24,7 +24,7 @@
     <%= render 'posts/post', post: post %>
   <% end %>
 <% elsif params[:tab] == 'comments' %>
-  <%= @user.comments.each do |comment| %>
+  <% @user.comments.each do |comment| %>
    <%= render 'comments/comment', comment: comment, show_post: true %>
   <% end %>
 <% end %>
