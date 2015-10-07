@@ -30,5 +30,5 @@
 <h5>Comments:</h5>
 
 <% @post.comments.each do |comment| %>
-  <%= render 'comments/comment', comment: comment %>
+  <%= render @post.comments %>
 <% end %>
